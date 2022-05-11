@@ -1,0 +1,38 @@
+body{
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0, 0, 0, 0.278) 91%, rgba(0,3,3,0) 100%);
+}
+
+.pagination > li > a
+{
+    background-color: white;
+    color: #000000;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #000000;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: #000000 !Important;
+    border: solid 1px #06000f !Important;
+}
+
+.pagination > .active > a:hover
+{
+    background-color: #030008 !Important;
+    border: solid 1px #030007;
+}
+
+.currentLink {
+    color: #000000;
+    background-color: #000000;
+ }
