@@ -1,38 +1,317 @@
-body{
-    background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0, 0, 0, 0.278) 91%, rgba(0,3,3,0) 100%);
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+  margin: 0;
+  font-size: 100%;
+  font-weight: normal;
+  text-decoration: none;
 }
 
-.pagination > li > a
-{
-    background-color: white;
-    color: #000000;
+body {
+  height: 100%;
+  background-image: url(../media/background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
 }
 
-.pagination > li > a:focus,
-.pagination > li > a:hover,
-.pagination > li > span:focus,
-.pagination > li > span:hover
-{
-    color: #000000;
-    background-color: #eee;
-    border-color: #ddd;
+html {
+  height: 100%;
 }
 
-.pagination > .active > a
-{
-    color: white;
-    background-color: #000000 !Important;
-    border: solid 1px #06000f !Important;
+#wrapper {
+  width: 100%;
+  margin: 0;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
 }
 
-.pagination > .active > a:hover
-{
-    background-color: #030008 !Important;
-    border: solid 1px #030007;
+/* css*/
+
+.section_padding_50 {
+  padding: 50px 0;
 }
 
-.currentLink {
-    color: #000000;
-    background-color: #000000;
- }
+/* header*/
+
+.header {
+  background-color: black;
+  height: 80px;
+}
+
+a.navbar-text {
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 0.15em;
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-block;
+  padding: 5px 10px 5px;
+  position: relative;
+  text-decoration: none;
+}
+
+a.navbar-text::after {
+  color: rgb(246, 246, 246);
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: rgb(221, 219, 219);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+  text-decoration: none;
+}
+a.navbar-text:hover::after {
+  color: rgb(250, 245, 245);
+  border: none;
+  width: 100%;
+  left: 0;
+  text-decoration: none;
+}
+
+a.navbar-text.active {
+  color: green;
+  text-decoration: none;
+}
+
+/* Post cards */
+
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display);
+
+.card-wrapper {
+  margin-bottom: 25px;
+}
+
+.card-news {
+  position: relative;
+  background-color: rgba(2, 2, 2, 0.5);
+  width: 60%;
+  height: max-content;
+  border: 1px solid #fbfbfb7f;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 10px;
+  box-shadow: 1px 2px 8px rgba(255, 255, 255, 0.379);
+  margin: auto;
+  color: white;
+}
+
+.text-box-wrapper {
+  padding: 20px;
+}
+
+.heading {
+  font-family: "Playfair-Display";
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.heading::after {
+  content: "";
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+
+.pub_date {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgb(248, 244, 244);
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 12px;
+}
+
+.post-image {
+  width: 100%;
+  padding: 20px;
+  height: auto;
+  border-radius: 8px;
+}
+.post-text {
+  font-family: Gill Sans, sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  padding: 15px;
+}
+
+/*Форма для написания поста*/
+
+.card-post {
+  position: relative;
+  max-width: 80%;
+  height: max-content;
+  background-color: #eff5ef00;
+  margin: 50px auto;
+  color: rgb(254, 250, 250);
+  padding: 10px;
+  border: 1px solid rgb(250, 249, 249);
+}
+
+.form-post {
+  width: 80%;
+  margin: auto;
+}
+
+.label-post {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.button-area {
+  text-align: center;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0);
+  height: 50px;
+  margin: 20px auto;
+  padding: 5px;
+}
+
+.button-post {
+  background: rgba(242, 237, 239, 0.608);
+  background: radial-gradient(
+    circle,
+    rgb(117, 113, 114) 0%,
+    rgb(238, 239, 242) 100%
+  );
+  line-height: 42px;
+  border-radius: 7px;
+  border: 2px solid rgba(249, 245, 245, 0.544);
+  letter-spacing: 2px;
+  width: 70%;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+}
+
+.button-post:hover {
+  background: rgb(29, 29, 32);
+  background: linear-gradient(0deg, rgb(178, 178, 198) 0%, rgb(4, 4, 4) 100%);
+}
+
+/*index page*/
+
+.welcome-box {
+  width: 100%;
+  display: flex;
+  height: 700px;
+  background-image: url(../media/background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.welcome {
+  width: 40%;
+  height: 80%;
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+.welcome-info {
+  margin: 140px auto;
+}
+
+.info {
+  font-size: 40px;
+  font-weight: 500;
+  color: white;
+  border-radius: 10px;
+  margin: 20px 40px 20px;
+}
+
+/*Employers*/
+
+section.employer {
+  background-color: #05000000;
+  width: 70%;
+  height: auto;
+  box-sizing: border-box;
+  margin: auto;
+}
+.employer-card {
+  background-color: rgba(2, 2, 2, 0.5);
+  border: 2px solid white;
+  height: fit-content;
+  width: 360px;
+  display: inline-block;
+  margin: 75px;
+  margin-right: 90px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.employer-photo {
+  width: 100%;
+  padding: 8px;
+}
+
+.employer-text {
+  margin-bottom: 10px;
+  color: rgb(255, 255, 255);
+}
+
+/* pagination */
+
+.paginator {
+  margin: 60px auto;
+  text-align: center;
+}
+.a-paginator {
+  display: inline-block;
+  padding: 6px 11px;
+  background-color: #0800006d;
+  font-weight: 600;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.a-paginator.active,
+.a-paginator:hover {
+  border-radius: 5px;
+  display: inline-block;
+  padding: 6px 11px;
+  color: #ffffff;
+  background-color: #92f178c7;
+  text-decoration: none;
+}
+
+/* Footer */
+
+.footer {
+  background-color: black;
+  text-align: center;
+  height: 100px;
+  display: flex;
+}
+
+#footer {
+  display: inline-block;
+  background-color: rgba(255, 192, 203, 0);
+  margin: auto;
+}
+
+.trade_mark {
+  color: white;
+  margin: auto;
+}
+
+.contact {
+  display: table;
+  color: white;
+  margin: auto;
+}

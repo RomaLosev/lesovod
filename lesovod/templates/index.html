@@ -1,17 +1,13 @@
-{% extends 'base.html' %}
-{% block content %}
-{% load static %}
-      <main>
-        <div class='container'>
-          <div class="jumbotron bg-tranparent">
-            <h1 class="display-4">Привет!</h1>
-            <p class="lead">Это просто пример блока на главной странице для привлечения дополнительного внимания к содержанию или информации.</p>
-            <hr class="my-4">
-            <p>Создан каркас сайта, дальше нужно заняться наполнением, оформлением и подключением различных скриптов</p>
-            <p class="lead">
-              <a class="btn btn-primary btn-lg" href="{% url 'posts' %}" role="button">Узнать больше!</a>
-            </p>
-        </div>
-      </div>
-      </main>
+{% extends 'base.html' %}{% load static %} {% block content %}
+
+<div class="welcome-box">
+  <div class="welcome">
+    <div class="welcome-info"><p class="info">Общая площадь во владении: 50000ГА</p></div>
+    <div class="welcome-info"><p class="info">Площадь посадки: 15000ГА</p></div>
+  </div>
+  <div class="welcome">
+    <div class="welcome-info"><p class="info">Площадь охот-хозяйства: 15000ГА</p></div>
+    <div class="welcome-info"><p class="info">И т.д. и т.п.</p></div>
+  </div>
+</div>
 {%endblock%}

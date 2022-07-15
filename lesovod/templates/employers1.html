@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% load thumbnail %} {% block content %}
+<main>
+  <div class="card-deck">
+    {% for employer in employers %}
+    <div class="card">
+    {% thumbnail employer.image 'x360' as im %}
+        <img class="card-img-top" src="{{ im.url }}" alt="Card image cap">
+    {% endthumbnail %}
+        <div class="card-body">
+          <h5>{{ employer.position }}</h5>
+          <p class='card-text'>{{ employer.name }}</h4>
+          <p class='card-text'>{{ employer.description }}</p>
+        </div>
+        <div class="card-footer ">
+          <small>Работает с {{ employer.work_since }}</small>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  </main>
+{% endblock %}

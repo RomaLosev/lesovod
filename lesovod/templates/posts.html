@@ -1,18 +1,30 @@
 {% extends 'base.html' %} {% load thumbnail %} {% block content %}
 <main>
+  {% include 'paginator.html' %}
   {% for post in page_obj %}
-  <div class="card">
-    <h5 class="card-header">{{ post.pub_date|date:"d E Y" }}</h5>
-    <div class="card-body">
-      <h5 class="card-title">{{ post.title }}</h5>
-      <p class="card-text">{{ post.text }}</p>
-      {% thumbnail post.image "x360" as im %}
-      <img src="{{ im.url }}">
-      {% endthumbnail %}
-    </div>
-  </div>
-  {% if not forloop.last %}
-  <hr />
-  {% endif %} {% endfor %} {% include 'paginator.html' %}
+          <div class="card-wrapper">
+            <div class="card-news">
+                  {% thumbnail post.image "x480" as im %}
+                  <img class='post-image' src="{{ im.url }}" />
+                  {% endthumbnail %}
+              <div class="text-box-wrapper">
+              <div class="text-box">
+                <h1 class="heading">
+                  {{ post.title}}
+                </h1>
+               <p class="post-text">
+                  {{ post.text}}
+               </p>               
+                <p class='pub_date'>
+                 {{ post.pub_date }}
+                </p>
+               
+              </div>
+             </div>
+            </div>
+          </div>
+  {% endfor %}
+  {% include 'paginator.html' %}
+  {% endblock %}
+
 </main>
-{% endblock %}

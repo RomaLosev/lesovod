@@ -11,7 +11,7 @@ def posts(request):
     title = 'Блог'
     template = 'posts.html'
     post_list = Post.objects.all().order_by('-pub_date')
-    paginator = Paginator(post_list, 10)
+    paginator = Paginator(post_list, 4)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     context = {

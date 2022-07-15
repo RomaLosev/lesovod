@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'posts.apps.PostsConfig',
     'users.apps.UsersConfig',
+    'employers.apps.EmployersConfig',
     'core.apps.CoreConfig',
     'sorl.thumbnail',
 ]

@@ -9,6 +9,7 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" 
           crossorigin="anonymous">
     <link rel="stylesheet" href={% static 'css/style.css' %}>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
     <meta charset="utf-8">
     <meta name="description" content="Лесовод">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'icons/icon.png' %}">
@@ -16,13 +17,16 @@
     <header>
     {%include 'includes/header.html' %}
     </header>
-      <div class="container">
+    <body>
+      <div id="wrapper">
         <main>
           {% block content %}
           'Контент не подвезли'
           {% endblock %}
         </main>
+      </div>
+  </body>
       <footer>
         {% include 'includes/footer.html' %}
       </footer>
-</html> 
+</html>

@@ -1,37 +1,19 @@
+
     {% if page_obj.has_other_pages %}
-    <nav aria-label="Page navigation" class="my-3">
-      <ul class="pagination">
-        {% if page_obj.has_previous %}
-          <li class="page-item"><a class="page-link" href="?page=1">Первая</a></li>
-          <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
-              Предыдущая
-            </a>
-          </li>
-        {% endif %}
-        {% for i in page_obj.paginator.page_range %}
+    <div class="paginator">
+      {% if page_obj.has_previous %}
+      <a class="a-paginator" href="?page={{ page_obj.previous_page_number }}">‹Предыдущая</a>
+      {% endif %}
+      {% for i in page_obj.paginator.page_range %}
             {% if page_obj.number == i %}
-              <li class="page-item active">
-                <span class="page-link" style="color:black">{{ i }}</span>
-              </li>
+              <a class="a-paginator active">{{ i }}</a>
             {% else %}
-              <li class="page-item">
-                <a class="page-link" href="?page={{ i }}">{{ i }}</a>
-              </li>
+              <a class="a-paginator" href="?page={{ i }}">{{ i }}</a>
             {% endif %}
-        {% endfor %}
-        {% if page_obj.has_next %}
-          <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.next_page_number }}">
-              Следующая
-            </a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">
-              Последняя
-            </a>
-          </li>
-        {% endif %}    
-      </ul>
-    </nav>
-    {% endif %} 
+      {% endfor %}
+            {% if page_obj.has_next %}
+              <a class="a-paginator" href="?page={{ page_obj.next_page_number }}">Следующая ›</a>
+              <a class="a-paginator" href="?page={{ page_obj.paginator.num_pages }}">Последняя »</a>
+            {% endif %}
+    </div>
+    {% endif %}

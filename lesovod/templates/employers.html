@@ -1,42 +1,13 @@
-{% extends 'base.html' %} {% block content %}
-<main>
-  <div class="row row-cols-1 row-cols-md-3 bg-tranparent">
-    <div class="col mb-4 bg-tranparent">
-      <div class="card bg-tranparent">
-        <img src="..." class="card-img-top" alt="..." />
-        <div class="card-body bg-tranparent">
-          <h5 class="card-title">Директор</h5>
-          <p class="card-text">Директор</p>
-        </div>
-      </div>
+{% extends 'base.html' %} {% load thumbnail %} {% block content %}
+<section class='employer'>
+{% for employer in employers %}
+    <div class="employer-card">
+        {% thumbnail employer.image '360' as im %}
+            <img src="{{ im.url }}" class="employer-photo" alt="Фото сотрудника">
+        {% endthumbnail %}
+        <h5 class="employer-text">{{ employer.name }}</h5>
+        <h1 class='employer-text'>{{ employer.position }}</h1>
     </div>
-    <div class="col mb-4">
-      <div class="card bg-tranparent">
-        <img src="..." class="card-img-top" alt="..." />
-        <div class="card-body bg-tranparent">
-          <h5 class="card-title">Менеджер</h5>
-          <p class="card-text">Менеджер</p>
-        </div>
-      </div>
-    </div>
-    <div class="col mb-4">
-      <div class="card bg-tranparent">
-        <img src="..." class="card-img-top" alt="..." />
-        <div class="card-body bg-tranparent">
-          <h5 class="card-title">Бухгалтер</h5>
-          <p class="card-text">Бухгалтер</p>
-        </div>
-      </div>
-    </div>
-    <div class="col mb-4">
-      <div class="card bg-tranparent">
-        <img src="..." class="card-img-top" alt="..." />
-        <div class="card-body bg-tranparent">
-          <h5 class="card-title">Лесничий</h5>
-          <p class="card-text">Лесничий</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</main>
+{% endfor %}
+</section>
 {% endblock %}

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from posts.models import Post
+from employers.models import Employers
 
 
 def index(request):
@@ -22,9 +23,11 @@ def about(request):
 
 def employers(request):
     template = 'employers.html'
+    employers = Employers.objects.all()
     title = 'Сотрудники'
     context = {
         'title': title,
+        'employers': employers,
     }
     return render(request, template, context)
 
