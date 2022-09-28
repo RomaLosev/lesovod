@@ -95,7 +95,7 @@ a.navbar-text.active {
 .card-news {
   position: relative;
   background-color: rgba(2, 2, 2, 0.5);
-  width: 60%;
+  width: 40%;
   height: max-content;
   border: 1px solid #fbfbfb7f;
   border-radius: 8px;
@@ -141,6 +141,7 @@ a.navbar-text.active {
   height: auto;
   border-radius: 8px;
 }
+
 .post-text {
   font-family: Gill Sans, sans-serif;
   font-size: 30px;
