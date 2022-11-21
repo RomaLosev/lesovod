@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from .models import Post
 
+
 class PostAdmin(admin.ModelAdmin):
     # Перечисляем поля, которые должны отображаться в админке
     list_display = ('text', 'pub_date', 'author') 

@@ -1,6 +1,7 @@
-from django.test import TestCase, Client
 from django.contrib.auth import get_user_model
-from posts.models import Post, Group
+from django.test import Client, TestCase
+
+from posts.models import Group, Post
 
 User = get_user_model()
 

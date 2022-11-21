@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from posts.models import Post
+
 from employers.models import Employers
+from posts.models import Post
 
 
 def index(request):

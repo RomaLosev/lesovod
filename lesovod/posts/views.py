@@ -1,10 +1,11 @@
-from posts.forms import PostForm
-from django.shortcuts import render, redirect
-from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
-from django.forms.utils import to_current_timezone
-from posts.models import Post
 from django.core.paginator import Paginator
+from django.forms.utils import to_current_timezone
+from django.shortcuts import redirect, render
+from django.views.decorators.csrf import csrf_exempt
+
+from posts.forms import PostForm
+from posts.models import Post
 
 
 def posts(request):
