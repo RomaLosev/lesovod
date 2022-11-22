@@ -28,11 +28,11 @@ class Employers(models.Model):
     image = models.ImageField(
         help_text='Фото сотрудника',
         verbose_name='Фото сотрудника',
-        upload_to='images/employers',        
+        upload_to='images/employers',
         null=True,
         blank=True,
-        
+
     )
 
     def __str__(self) -> str:
-        return self.description
+        return str(self.description)
