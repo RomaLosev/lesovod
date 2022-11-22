@@ -3,7 +3,7 @@ WORKDIR /app
 COPY lesovod/pyproject.toml/ lesovod/poetry.lock/ ./
 RUN pip install poetry
 RUN poetry config virtualenvs.create false
-COPY lesovod .
+COPY lesovod default.conf/ docker-compose.yaml/ ./
 RUN poetry install
 CMD ["gunicorn", "lesovod.wsgi:application", "--bind", "0:8000" ]
 
